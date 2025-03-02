@@ -1,8 +1,8 @@
 :root {
-  --color-lightest: #fff4e6;
-  --color-light: #ffe8cc;
-  --color-medium: #ffa94d;
-  --color-dark: #ff922b;
+  --color-lightest: #ffe5ec;
+  --color-light: #ffb3c6;
+  --color-medium: #ff8fab;
+  --color-dark: #fb6f92;
 }
 
 * {
@@ -19,7 +19,8 @@ html {
 
 body {
   height: 100vh;
-  color: #495057;
+  background-color: #2d3142;
+  color: #bfc0c0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,6 +72,7 @@ body {
 .selected,
 .sidebar li:hover {
   background-color: var(--color-lightest);
+  color: #343a40;
 }
 
 .sidebar li img {
@@ -115,6 +117,7 @@ form {
 
   background-color: var(--color-lightest);
   border-radius: 7px;
+  color: #343a40;
 }
 
 .form-add-friend {
@@ -128,6 +131,7 @@ form {
 }
 
 label {
+  justify-self: start;
   font-weight: 500;
 }
 
@@ -166,4 +170,8 @@ form h2 {
   text-transform: uppercase;
   letter-spacing: -0.5px;
   margin-bottom: 1.6rem;
+}
+
+.icons {
+  margin-right: 5px;
 }

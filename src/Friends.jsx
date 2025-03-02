@@ -1,8 +1,7 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUsers } from "@fortawesome/free-solid-svg-icons";
-export default function Friends({ friend }) {
+export default function Friends({ friend, onSelection, selectedFriend }) {
+  const isSelected = (selectedFriend ?? "default string").id === friend.id;
   return (
-    <li>
+    <li className={isSelected ? "selected" : ""}>
       <img src={friend.image} alt={friend.name} />
       <h3>{friend.name}</h3>
       {friend.balance < 0 && (
@@ -16,12 +15,9 @@ export default function Friends({ friend }) {
         </p>
       )}
       {friend.balance === 0 && <p>You and {friend.name} are even</p>}
-      <button className="button">Select</button>
-      {/* <FontAwesomeIcon icon={faUsers} /> */}
-      {/* <FontAwesomeIcon icon={faImage} /> */}
-      {/* <FontAwesomeIcon icon={faMoneyCheckDollar} /> */}
-      {/* <FontAwesomeIcon icon={faPerson} /> */}
-      {/* <FontAwesomeIcon icon={faMoneyBillTransfer} /> */}
+      <button onClick={() => onSelection(friend)} className="button">
+        {isSelected ? "Close" : "Select"}
+      </button>
     </li>
   );
 }
